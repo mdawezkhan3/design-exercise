@@ -46,32 +46,26 @@ const Products = ({ exchangeRates, currency }) => {
 
   return (
     <Grid container spacing={2} className={classes.root}>
-        {products.map(product => (
-            <Grid key={product.id} xs={12} sm={6} md={4} lg={3} xl={2} item>
-                <Card>
-                    <CardMedia
-                        image={product.imageUrl}
-                        className={classes.media}
-                    />
-                    <CardContent className={classes.title}>
-                        <Typography
-                            variant="h5"
-                            align="center"
-                        >
-                            {product.name}
-                        </Typography>
-                        <Typography
-                            variant="h6"
-                            align="center"
-                        >
-                          {exchangeRates ? (product.price * exchangeRates[currency]).toFixed(2) : ''}
-                        </Typography>
-                    </CardContent>
-                </Card>
-            </Grid>
-        ))}
+      {products.map(product => (
+        <Grid key={product.id} xs={12} sm={6} md={4} lg={3} xl={2} item>
+          <Card>
+            <CardMedia
+              image={product.imageUrl}
+              className={classes.media}
+            />
+            <CardContent className={classes.title}>
+              <Typography variant="h5" align="center">
+                {product.name}
+              </Typography>
+              <Typography variant="h6"align="center">
+                {exchangeRates ? (product.price * exchangeRates[currency]).toFixed(2) : ''}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
     </Grid>
-  )
+  );
 }
 
 export default Products;

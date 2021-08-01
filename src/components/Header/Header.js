@@ -26,7 +26,6 @@ const currencies = [
 const Header = ({ handleCurrencyChange }) => {
   const classes = useStyles();
 
-
   return (
     <div className={classes.root}>
       <AppBar position="static"  style={{ backgroundColor: '#cbccf2' }}>
